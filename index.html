@@ -1672,7 +1672,19 @@ Yalnızca bu sohbeti hiç görmemiş birinin işine yarayacak bilgiyi yaz.
 <p>"Yapay zekâ öyle dedi" bir savunma değildir. Avukat ceza aldı, Air Canada ödedi, Deloitte parayı iade etti; hiçbirinde fatura modele kesilmedi. Bu derste LLM'e yazdırdığınız her kodun ve her raporun sahibi sizsiniz.</p>
 <div class="admonition deney">
 <p class="admonition-title">Deneyin: modeli tuzağa düşürün</p>
-<p>Bir sohbet uygulamasında web aramasını kapatın ve şunu sorun: "Anadolu Üniversitesi'nde 2019'da yazılmış, yapay zekâ ile ilgili 3 yüksek lisans tezinin adını, yazarını ve danışmanını listele." Gelen tezleri <a href="https://tez.yok.gov.tr/">YÖK Tez Merkezi</a>'nde arayın; kaçı gerçek? Sonra aynı soruyu web araması açıkken ve sonuna "Emin olmadığın bilgiyi yazma" ekleyerek tekrar sorun. Ne değişti?</p>
+<p>Bir modele şunu sorun:</p>
+<blockquote>
+<p>Python'un json modülündeki json.repair() fonksiyonu bozuk JSON'u nasıl onarıyor? Kısa bir örnek kod yaz.</p>
+</blockquote>
+<p>Python'un <code>json</code> modülünde <code>repair</code> adında bir fonksiyon <strong>yoktur</strong>; soru onu varmış gibi sunuyor. Bakın bakalım:</p>
+<ol>
+<li>Model "böyle bir fonksiyon yok" mu dedi, yoksa güzel görünen bir örnek kod mu yazdı?</li>
+<li>Kod yazdıysa çalıştırın. Python <code>AttributeError: module 'json' has no attribute 'repair'</code> hatası verecektir. Kodun doğruluğunu program söyler.</li>
+<li>Emin olmak için <a href="https://docs.python.org/3/library/json.html">resmî belgeye</a> bakın.</li>
+<li>İmkânınız varsa aynı soruyu kendi bilgisayarınızda çalışan küçük bir modele de sorun (nasıl kurulacağı <a href="#16-acik-ve-kucuk-modeller">16. bölümde</a> anlatılıyor; örneğin <code>gemma3:1b</code>). Büyük modeller bu tuzağı çoğunlukla fark eder; küçükler daha sık düşer.</li>
+<li>Sorunun sonuna "Böyle bir fonksiyon yoksa uydurma, yok de" ekleyip tekrar sorun. Ne değişti?</li>
+</ol>
+<p>Buradan çıkan ders: soruyu yanlış bir varsayımla sorarsanız model sizi düzeltmek yerine varsayımınıza uyabilir. Emin olmadığınız şeyi "var mı?" diye sorun, "nasıl kullanılır?" diye değil.</p>
 </div>
 <div class="admonition ozet">
 <p class="admonition-title">Bu bölümden akılda kalacaklar</p>
